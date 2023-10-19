@@ -60,3 +60,15 @@ input[type="submit"] {
   font-weight: 500;
   cursor: pointer;
 }
+
+body.dark{
+  background-color: #2a2727;
+  color: #fff;
+}
+
+body.dark a{
+  color: #fff;
+}
+body.dark .brands_full{
+  background-color: gray;
+}

@@ -9,9 +9,9 @@ const Services = () => {
             <h2>Why Choose Us</h2>
           </div>
           <div className="services__items">
-            {services.map((service) => (
+            {services.map((service, index) => (
               <>
-                <div className="service__item">
+                <div key={index} className="service__item">
                   <img src={service.icon} alt="icon" />
                   <h3>{service.title}</h3>
                 </div>
