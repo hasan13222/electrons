@@ -1,34 +1,60 @@
+import { useContext } from "react"
 import { images } from "../assets"
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
+import { AuthContext } from "../contexts/AuthProvider"
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Navbar = () => {
+    const {user, handleSignOut} = useContext(AuthContext);
+    const notify = () => toast("You Logged out successfully");
+
+
+    const handleLogout = () => {
+        handleSignOut()
+          .then(() => {
+            notify();
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
   return (
     <>
         <div className="full_container navbar_full">
             <div className="fix_container navbar">
                 <div className="logo">
-                    <Link to={'/'}>
+                    <NavLink to={'/'}>
                         <img src={images.logo} alt="logo" />
                         <span>Electrons</span>
-                    </Link>
+                    </NavLink>
                 </div>
                 <ul className="nav">
                     <li>
-                        <Link to={'/'}>Home</Link>
+                        <NavLink to={'/'}>Home</NavLink>
                     </li>
                     <li>
-                        <Link to={'/add-product'}>Add Product</Link>
+                        <NavLink to={'/add-product'}>Add Product</NavLink>
                     </li>
                     <li>
-                        <Link>My Cart</Link>
+                        <NavLink to={'/cart'}>My Cart</NavLink>
                     </li>
                     <li>
-                        <Link>Login</Link>
+                    {!user && <NavLink to={"/login"}>Login</NavLink>}
+                    </li>
+                    <li>
+                    {user && <img src={user?.photoURL} alt="profile" />}
+                    </li>
+                    <li>
+                    {user && <span>{user?.displayName}</span>}
+                    </li>
+                    <li>
+                    {user && <button onClick={handleLogout}>Logout</button>}
                     </li>
                 </ul>
             </div>
         </div>
+        <ToastContainer/>
     </>
   )
 }

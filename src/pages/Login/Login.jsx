@@ -1,61 +1,61 @@
 import { FcGoogle } from "react-icons/fc";
 import "./Login.css";
-import { Link } from "react-router-dom";
-// import { ToastContainer, toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import app from '../../firebase/firebase.config'
-// import { useContext, useState } from "react";
-// import { GoogleAuthProvider, getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
-// import { AuthCtx } from "../../contexts/AuthCtx";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../contexts/AuthProvider";
 
 const Login = () => {
-//   const [loginError, setLoginError] = useState("");
-//   const [googleLoginError, setGoogleLoginError] = useState("");
-//   const notify = () => toast("You Logged In Successfully");  
-//   const auth = getAuth(app);
-//   const provider = new GoogleAuthProvider();
-//   const {setLoading} = useContext(AuthCtx)
+  const [loginError, setLoginError] = useState("");
+  const [googleLoginError, setGoogleLoginError] = useState("");
+  const notify = () => toast("You Logged In Successfully");  
+  const {handleSignIn, handleGoogleSignIn} = useContext(AuthContext)
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     const email = e.target.user_email.value;
-//     const password = e.target.user_password.value;
-//     signInWithEmailAndPassword(auth, email, password)
-//       .then(() => {
-//         setLoginError('');
-//         notify();
-//         setLoading(false);
-//       })
-//       .catch((error) => {
-//         const errorMessage = error.message;
-//         setLoginError(errorMessage);
-//       });
-//   };
+    const navigate = useNavigate()
 
-//   const handleGoogleSignin = () => {
-//     signInWithPopup(auth, provider)
-//     .then(() => {
-//       setGoogleLoginError('');
-//         notify();
-//     }).catch((error) => {
-//       const errorMessage = error.message;
-//       setGoogleLoginError(errorMessage);
-//     });
-//   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    const email = e.target.user_email.value;
+    const password = e.target.user_password.value;
+    handleSignIn(email, password)
+      .then(() => {
+        setLoginError('');
+        notify();
+        navigate('/')
+      })
+      .catch((error) => {
+        const errorMessage = error.message;
+        setLoginError(errorMessage);
+      });
+  };
+
+  const handleGoogleSubmit = () => {
+    handleGoogleSignIn()
+    .then(() => {
+      setGoogleLoginError('');
+        notify();
+        navigate('/')
+    }).catch((error) => {
+      const errorMessage = error.message;
+      setGoogleLoginError(errorMessage);
+    });
+  }
 
   return (
     <>
       <div className="full_container login_full">
         <div className="fix_container login">
           <h2>User Login</h2>
-          <form >
+          <form onSubmit={handleSubmit}>
             <input type="text" name="user_email" placeholder="Email" />
             <input
               type="password"
               name="user_password"
               placeholder="PassWord"
             />
-            <p className="warning">{}</p>
+            <p className="warning">{loginError}</p>
             <input type="submit" value="Login" />
           </form>
           <p>
@@ -64,14 +64,14 @@ const Login = () => {
               SignUp
             </Link>
           </p>
-          <button className="google_signin">
+          <button onClick={handleGoogleSubmit} className="google_signin">
             <FcGoogle />
             Continue With Google
           </button>
-          <p className="warning">{}</p>
+          <p className="warning">{googleLoginError}</p>
         </div>
       </div>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
     </>
   );
 };

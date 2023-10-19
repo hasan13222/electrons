@@ -28,7 +28,15 @@
     align-items: center;
     gap: 3rem;
 }
+.navbar ul.nav li a.active {
+    color: #5d7adb;
+}
 
+.navbar ul.nav li img {
+    width: 3rem;
+    max-height: 3rem;
+    object-fit: contain;
+}
 .navbar ul.nav li a {font-weight: bold;}
 
 
