@@ -1,0 +1,30 @@
+.products__item {
+    display: flex;
+    gap: 10rem;
+    align-items: center;
+    height: 40rem;
+}
+
+.products__item ul li {
+    margin-bottom: 5px;
+}
+
+.products__item .btns {
+    display: flex;
+    gap: 1.5rem;
+}
+.products_full {
+    padding: 7rem 0;
+}
+
+.products {
+    background-color: #D9DDE9;
+    padding: 3.5rem;
+    border-radius: 5px;
+}
+
+.products__item img {
+    width: 48%;
+    height: auto;
+    object-fit: cover;
+}

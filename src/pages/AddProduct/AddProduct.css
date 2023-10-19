@@ -1,0 +1,37 @@
+
+.addProduct .input_item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 46%;
+}
+
+.addProduct_full {
+    padding: 5rem 0;
+}
+
+.addProduct h2 {
+    margin-bottom: 1.8rem;
+}
+
+.addProduct .input_item input, .addProduct .input_item textarea {
+    border: 1px solid gainsboro;
+    padding: 1.4rem;
+    border-radius: 2px;
+}
+
+.addProduct form {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+.addProduct .input_item.description {
+    width: 100%;
+}
+
+.addProduct .input_item label {
+    padding-left: 2px;
+}

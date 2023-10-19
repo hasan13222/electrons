@@ -1,0 +1,122 @@
+
+
+/* hero */
+.hero_full {
+    background: url('../../assets/images/hero.jpg') no-repeat;
+    background-size: cover;
+    padding: 15rem 0;
+    color: #fff;
+}
+.hero {
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    width: 55rem;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+/* brands */
+.brands_full{
+    padding: 7rem 0;
+}
+.brands__items {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 5rem;
+}
+
+.brands__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.brands__item a {
+    text-decoration: underline;
+}
+
+.brands__item img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+}
+
+/* services */
+.services_full {
+    padding: 5rem 0;
+    margin-bottom: 5rem;
+}
+
+.services__items {
+    display: flex;
+    justify-content: space-between;
+}
+
+.service__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+/* newsletter */
+.newsletter_full{
+    background: url('../../assets/images/newsletter.png') no-repeat;
+    background-size: cover;
+    padding: 10rem 0;
+    margin-bottom: 5rem;
+}
+
+.newsletter p svg {
+    background-color: blue;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    padding: 5px;
+    color: #fff;
+}
+
+.newsletter p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.newsletter p span {
+    color: #0048ff;
+    font-weight: bold;
+}
+
+.newsletter h2 {
+    margin: 10px 0px;
+}
+
+.newsletter form.subscribe {
+    position: relative;
+}
+
+.newsletter form.subscribe input[type="email"] {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 2px;
+    width: 30rem;
+    padding-left: 4.4rem;
+}
+
+.newsletter form.subscribe svg.mail_icon {
+    position: absolute;
+    left: 1.5rem;
+    color: #000;
+    top: 15px;
+    font-size: 2rem;
+}
+
+.newsletter form.subscribe input[type="submit"] {
+    margin-left: 1rem;
+}

@@ -1,0 +1,29 @@
+.productDetails {
+    display: flex;
+    flex-direction: column;
+    width: 765px;
+    gap: 1.5rem;
+    padding: 7rem 0;
+}
+
+.productDetails img {
+    align-self: center;
+    width: 35rem;
+    height: 35rem;
+    object-fit: contain;
+    margin-bottom: 1.7rem;
+}
+
+.productDetails button {
+    align-self: center;
+}
+
+.productDetails .specs ul {
+    padding-left: 4rem;
+    margin: 1.7rem 0;
+}
+
+.productDetails .specs ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
