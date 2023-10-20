@@ -1,0 +1,19 @@
+.cart__item {
+    display: flex;
+    padding: 3rem 0;
+    align-items: center;
+    gap: 4rem;
+}
+
+.cart__item img {
+    width: 10rem;
+    max-height: 15rem;
+    object-fit: contain;
+}
+
+.cart__item span:first-of-type {
+    font-size: 3rem;
+}
+.cart_full {
+    padding: 5rem 0;
+}

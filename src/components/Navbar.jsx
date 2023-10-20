@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 const Navbar = () => {
-    const {user, setUser, handleSignOut} = useContext(AuthContext);
+    const {user, handleSignOut} = useContext(AuthContext);
     const notify = () => toast("You Logged out successfully");
 
     console.log(user);
@@ -36,6 +36,10 @@ const Navbar = () => {
                     </li>
                     {user &&  <li>
                          <NavLink to={'/add-product'}>Add Product</NavLink>
+                    </li>
+                    }
+                    {user &&  <li>
+                         <NavLink to={'/carts'}>My Cart</NavLink>
                     </li>
                     }
                     <li>

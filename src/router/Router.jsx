@@ -8,6 +8,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import NotFound from "../pages/NotFound/NotFound";
 import PrivateRoute from "./PrivateRoute";
+import MyCart from "../pages/MyCart/MyCart";
 
 const Router = () => {
   return (
@@ -26,6 +27,9 @@ const Router = () => {
                 <ProductDetails />
               </PrivateRoute>
             } />
+            <Route path="/carts" element={<PrivateRoute>
+              <MyCart/>
+            </PrivateRoute>} />
             <Route path="/products/:brand" element={<Products />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
