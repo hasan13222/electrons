@@ -6,6 +6,17 @@ const MyCart = () => {
   const [cartProducts, setCartProducts] = useState([]);
   const {user} = useContext(AuthContext)
 
+
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/cart/${id}`, {
+        method: 'DELETE',
+    })
+    .then(response => response.json())
+    .then(() => {
+        const updatedProduct = cartProducts.filter(item => item._id !== id);
+        setCartProducts(updatedProduct);
+    })
+  }
   useEffect(() => {
     fetch("http://localhost:5000/carts")
       .then((res) => res.json())
@@ -26,7 +37,7 @@ const MyCart = () => {
                   <span>{index+1}.</span>
                   <img src={product.product_image} alt="prodcut image" />
                   <span>{product.product_name}</span>
-                  <button>Delete</button>
+                  <button onClick={() => handleDelete(product._id)}>Delete</button>
                 </div>
               </>
             ))}
