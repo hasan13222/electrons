@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import NotFound from "../pages/NotFound/NotFound";
 import PrivateRoute from "./PrivateRoute";
 import MyCart from "../pages/MyCart/MyCart";
+import UpdateProduct from "../pages/UpdateProduct/UpdateProduct";
 
 const Router = () => {
   return (
@@ -25,6 +26,11 @@ const Router = () => {
             <Route path="/product/:id" element={
               <PrivateRoute>
                 <ProductDetails />
+              </PrivateRoute>
+            } />
+            <Route path="/product/update/:id" element={
+              <PrivateRoute>
+                <UpdateProduct />
               </PrivateRoute>
             } />
             <Route path="/carts" element={<PrivateRoute>

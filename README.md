@@ -1,8 +1,9 @@
-# React + Vite
+# Electrons Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## [Live Link](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
+## Fetures of the Site
+  - Products and brand advertisement presened in a slider
+  - Product Details can be seen by clicking details button
+  - Product can be updated by clicking update button
+  - Product can be added in the cart by clicking add to cart button
+  - Product in the cart can be removed by clicking delete button

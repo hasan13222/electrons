@@ -87,7 +87,7 @@ const Products = () => {
                         </ul>
                         <div className="btns">
                           <button onClick={() => navigate(`/product/${product._id}`)} className="details">Details</button>
-                          <button className="update">Update</button>
+                          <button onClick={() => navigate(`/product/update/${product._id}`)} className="update">Update</button>
                         </div>
                       </div>
                     </div>
