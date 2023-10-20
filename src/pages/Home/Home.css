@@ -1,183 +1,223 @@
 /* light dark mode */
 
 button.lt_dark_mode {
-    padding: 6px 9px;
-    border-radius: 2rem 0 0 2rem;
-    position: fixed;
-    top: 49%;
-    right: 0;
+  padding: 6px 9px;
+  border-radius: 2rem 0 0 2rem;
+  position: fixed;
+  top: 49%;
+  right: 0;
+  z-index: 10;
 }
-  
-  .lt_dark_mode .checkbox {
-    opacity: 0;
-    position: absolute;
-  }
-  
-  .lt_dark_mode .checkbox-label {
-    background-color: #111;
-    width: 50px;
-    height: 26px;
-    border-radius: 50px;
-    position: relative;
-    padding: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .lt_dark_mode .fa-moon {
-    color: #f1c40f;
-  }
-  
-  .lt_dark_mode .fa-sun {
-    color: #f39c12;
-  }
-  
-  .lt_dark_mode .checkbox-label .ball {
-    background-color: #fff;
-    width: 22px;
-    height: 22px;
-    position: absolute;
-    left: 2px;
-    top: 2px;
-    border-radius: 50%;
-    transition: transform 0.2s linear;
-  }
-  
-  .lt_dark_mode .checkbox:checked + .checkbox-label .ball {
-    transform: translateX(24px);
-  }
-  
-  button.lt_dark_mode .fa-circle {
-    padding-top: 1px;
-  }
-  
-  button.lt_dark_mode i {
-    color: #b7b7b7;
-  }
-  
-  button.lt_dark_mode i.active {
-    color: #ffc533;
-  }
+
+.lt_dark_mode .checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.lt_dark_mode .checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lt_dark_mode .fa-moon {
+  color: #f1c40f;
+}
+
+.lt_dark_mode .fa-sun {
+  color: #f39c12;
+}
+
+.lt_dark_mode .checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.lt_dark_mode .checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+button.lt_dark_mode .fa-circle {
+  padding-top: 1px;
+}
+
+button.lt_dark_mode i {
+  color: #b7b7b7;
+}
+
+button.lt_dark_mode i.active {
+  color: #ffc533;
+}
 
 /* hero */
 .hero_full {
-    background: url('../../assets/images/hero.jpg') no-repeat;
-    background-size: cover;
-    padding: 15rem 0;
-    color: #fff;
+  background: url("../../assets/images/hero.jpg") no-repeat;
+  background-size: cover;
+  padding: 15rem 0;
+  color: #fff;
 }
 .hero {
-    text-align: center;
+  text-align: center;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    width: 55rem;
-    margin: 0 auto;
-    margin-bottom: 2rem;
+  font-size: 4rem;
+  width: 55rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
 /* brands */
-.brands_full{
-    padding: 7rem 0;
+.brands_full {
+  padding: 7rem 0;
 }
 .brands__items {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    flex-wrap: wrap;
-    gap: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 5rem;
 }
 
 .brands__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
 }
 
 .brands__item a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .brands__item img {
-    width: 10rem;
-    height: 10rem;
-    object-fit: contain;
+  width: 10rem;
+  height: 10rem;
+  object-fit: contain;
 }
 
 /* services */
 .services_full {
-    padding: 5rem 0;
-    margin-bottom: 5rem;
+  padding: 5rem 0;
+  margin-bottom: 5rem;
 }
 
 .services__items {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .service__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 }
 
 /* newsletter */
-.newsletter_full{
-    background: url('../../assets/images/newsletter.png') no-repeat;
-    background-size: cover;
-    padding: 10rem 0;
-    margin-bottom: 5rem;
+.newsletter_full {
+  background: url("../../assets/images/newsletter.png") no-repeat;
+  background-size: cover;
+  padding: 10rem 0;
+  margin-bottom: 5rem;
 }
 
 .newsletter p svg {
-    background-color: blue;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    padding: 5px;
-    color: #fff;
+  background-color: blue;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  padding: 5px;
+  color: #fff;
 }
 
 .newsletter p {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .newsletter p span {
-    color: #0048ff;
-    font-weight: bold;
+  color: #0048ff;
+  font-weight: bold;
 }
 
 .newsletter h2 {
-    margin: 10px 0px;
+  margin: 10px 0px;
 }
 
 .newsletter form.subscribe {
-    position: relative;
+  position: relative;
 }
 
 .newsletter form.subscribe input[type="email"] {
-    background-color: #fff;
-    padding: 1.5rem;
-    border-radius: 2px;
-    width: 30rem;
-    padding-left: 4.4rem;
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 2px;
+  width: 30rem;
+  padding-left: 4.4rem;
 }
 
 .newsletter form.subscribe svg.mail_icon {
-    position: absolute;
-    left: 1.5rem;
-    color: #000;
-    top: 15px;
-    font-size: 2rem;
+  position: absolute;
+  left: 1.5rem;
+  color: #000;
+  top: 15px;
+  font-size: 2rem;
 }
 
 .newsletter form.subscribe input[type="submit"] {
-    margin-left: 1rem;
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: 1150px) {
+  .brands__items {
+    justify-content: space-evenly;
+    gap: 5rem;
+  }
+
+  .brands__item {
+    width: 25%;
+  }
+
+  .service__item h3 {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .hero h1 {
+    font-size: 3rem;
+    width: 100%;
+  }
+
+  .services__items {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .service__item {
+    width: 48%;
+    margin-bottom: 2rem;
+  }
+
+  .newsletter form.subscribe input[type="submit"] {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
 }

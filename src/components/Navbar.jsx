@@ -9,8 +9,6 @@ const Navbar = () => {
     const {user, handleSignOut} = useContext(AuthContext);
     const notify = () => toast("You Logged out successfully");
 
-    console.log(user);
-
     const handleLogout = () => {
         handleSignOut()
           .then(() => {
@@ -42,9 +40,6 @@ const Navbar = () => {
                          <NavLink to={'/carts'}>My Cart</NavLink>
                     </li>
                     }
-                    <li>
-                        <NavLink to={'/cart'}>My Cart</NavLink>
-                    </li>
                     <li>
                     {!user && <NavLink to={"/login"}>Login</NavLink>}
                     </li>

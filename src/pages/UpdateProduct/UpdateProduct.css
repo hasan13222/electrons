@@ -35,3 +35,11 @@
 .updateProduct .input_item label {
     padding-left: 2px;
 }
+
+
+@media only screen and (max-width: 767px) {
+    .updateProduct form {
+      width: 100%;
+    }
+  }
+  

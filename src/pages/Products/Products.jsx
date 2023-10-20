@@ -11,13 +11,14 @@ import "swiper/css/navigation";
 import { useEffect, useState } from "react";
 
 const Products = () => {
+  const [loading, setLoading] = useState(true);
   const [brandProducts, setBrandProducts] = useState([]);
   const [productAds, setProductAds] = useState([]);
   const { brand } = useParams();
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://electrons-server-acd4l58lx-jamil-hasans-projects.vercel.app/products")
       .then((response) => response.json())
       .then((data) => {
         const brandName = brand.toLowerCase();
@@ -25,11 +26,12 @@ const Products = () => {
           (product) => product.brand_name.toLowerCase() === brandName
         );
         setBrandProducts(products);
+        setLoading(false);
       });
-  }, []);
+  }, [productAds]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/productAds")
+    fetch("https://electrons-server-acd4l58lx-jamil-hasans-projects.vercel.app/productAds")
       .then((response) => response.json())
       .then((data) => {
         const brandName = brand.toLowerCase();
@@ -37,8 +39,9 @@ const Products = () => {
           (product) => product.brand.toLowerCase() === brandName
         );
         setProductAds(ads);
+        setLoading(false);
       });
-  }, []);
+  }, [brandProducts]);
   return (
     <>
       <div className="full_container products_full">
@@ -59,16 +62,9 @@ const Products = () => {
             modules={[Autoplay, Pagination, Navigation]}
             className="mySwiper"
           >
-            {brandProducts?.length === 0 && (
-              <div className="products__item products__empty">
-                <h2>Products Coming Soon</h2>
-                <p>
-                  No Products are available yet. Please Keep in touch with Us.
-                </p>
-              </div>
-            )}
+            {loading && <h2>Loading...</h2>}
 
-            {brandProducts?.length > 0 &&
+            {brandProducts?.length > 0 ?
               brandProducts?.map((product) => (
                 <>
                   <SwiperSlide>
@@ -93,9 +89,17 @@ const Products = () => {
                     </div>
                   </SwiperSlide>
                 </>
-              ))}
-            {productAds?.length > 0 &&
-              productAds?.map((productAd) => (
+              ))
+              
+              : (!loading &&
+                <div className="products__item products__empty">
+                  <h2>Products Coming Soon</h2>
+                  <p>
+                    No Products are available yet. Please Keep in touch with Us.
+                  </p>
+                </div>
+              )}
+            {productAds?.map((productAd) => (
                 <>
                   <SwiperSlide>
                     <div className="products__item products__ad">

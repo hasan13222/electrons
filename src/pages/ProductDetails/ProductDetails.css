@@ -27,3 +27,17 @@
     margin-bottom: 10px;
     font-size: 16px;
 }
+
+
+@media only screen and (max-width: 1150px) {
+    .productDetails{
+        width: 675px;
+    }
+}
+
+
+@media only screen and (max-width: 767px) {
+    .productDetails{
+        width: 95%;
+    }
+}

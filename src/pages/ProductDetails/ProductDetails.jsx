@@ -18,7 +18,7 @@ const ProductDetails = () => {
             product_name: product.product_name,
             product_image: product.product_image
         }
-        fetch('http://localhost:5000/addToCart', {
+        fetch('https://electrons-server-acd4l58lx-jamil-hasans-projects.vercel.app/addToCart', {
             method: 'POST',
             headers: { 'content-type': 'application/json', },
             body: JSON.stringify(productToBeAdded)
@@ -32,7 +32,7 @@ const ProductDetails = () => {
         })
     }
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://electrons-server-acd4l58lx-jamil-hasans-projects.vercel.app/product/${id}`)
         .then(res => res.json())
         .then(data => setProduct(data))
         .catch(err => {

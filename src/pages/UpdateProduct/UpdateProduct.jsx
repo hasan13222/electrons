@@ -30,7 +30,7 @@ const UpdateProduct = () => {
       description
     }
 
-    fetch(`http://localhost:5000/product/update/${id}`, {
+    fetch(`https://electrons-server-acd4l58lx-jamil-hasans-projects.vercel.app/product/update/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updateProduct)
@@ -45,7 +45,7 @@ const UpdateProduct = () => {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product/${id}`)
+    fetch(`https://electrons-server-acd4l58lx-jamil-hasans-projects.vercel.app/product/${id}`)
     .then(res => res.json())
     .then(data => setPrevProduct(data))
     .catch(err => {

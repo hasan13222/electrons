@@ -1,6 +1,6 @@
 # Electrons Website
 
-## [Live Link](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md)
+## [Live Link](https://electrons-1d175.web.app/)
 ## Fetures of the Site
   - Products and brand advertisement presened in a slider
   - Product Details can be seen by clicking details button

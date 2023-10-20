@@ -8,7 +8,7 @@ const MyCart = () => {
 
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/cart/${id}`, {
+    fetch(`https://electrons-server-acd4l58lx-jamil-hasans-projects.vercel.app/cart/${id}`, {
         method: 'DELETE',
     })
     .then(response => response.json())
@@ -18,7 +18,7 @@ const MyCart = () => {
     })
   }
   useEffect(() => {
-    fetch("http://localhost:5000/carts")
+    fetch("https://electrons-server-acd4l58lx-jamil-hasans-projects.vercel.app/carts")
       .then((res) => res.json())
       .then((data) => {
         const products = data.filter(item => item.userId === user.uid);

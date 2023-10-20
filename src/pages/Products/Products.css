@@ -40,3 +40,21 @@
     width: 100%;
     height: 100%;
 }
+
+
+@media only screen and (max-width: 1150px) {
+    .products__item {
+        height: 33rem;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .products__item {
+        height: 18rem;
+        gap: 2rem;
+    }
+    
+    .products__item img {
+        width: 35%;
+    }
+}
