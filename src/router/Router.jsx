@@ -21,8 +21,12 @@ const Router = () => {
                 <AddProduct />
               </PrivateRoute>
             } />
+            <Route path="/product/:id" element={
+              <PrivateRoute>
+                <ProductDetails />
+              </PrivateRoute>
+            } />
             <Route path="/products/:brand" element={<Products />} />
-            <Route path="/product-details" element={<ProductDetails />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
           </Route>

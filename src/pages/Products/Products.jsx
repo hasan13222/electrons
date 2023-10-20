@@ -1,6 +1,5 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { images } from "../../assets";
 import "./Products.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
@@ -15,6 +14,7 @@ const Products = () => {
   const [brandProducts, setBrandProducts] = useState([]);
   const [productAds, setProductAds] = useState([]);
   const { brand } = useParams();
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:5000/products")
@@ -86,7 +86,7 @@ const Products = () => {
                           <li>Rating: {product.rating}</li>
                         </ul>
                         <div className="btns">
-                          <button className="details">Details</button>
+                          <button onClick={() => navigate(`/product/${product._id}`)} className="details">Details</button>
                           <button className="update">Update</button>
                         </div>
                       </div>
