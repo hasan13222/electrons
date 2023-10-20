@@ -33,9 +33,10 @@ const Navbar = () => {
                     <li>
                         <NavLink to={'/'}>Home</NavLink>
                     </li>
-                    <li>
-                        <NavLink to={'/add-product'}>Add Product</NavLink>
+                    {user &&  <li>
+                         <NavLink to={'/add-product'}>Add Product</NavLink>
                     </li>
+                    }
                     <li>
                         <NavLink to={'/cart'}>My Cart</NavLink>
                     </li>

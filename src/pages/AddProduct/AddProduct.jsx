@@ -1,12 +1,50 @@
+import { ToastContainer, toast } from 'react-toastify';
 import './AddProduct.css'
 
 const AddProduct = () => {
+
+  const notify = () => toast("Product Added Successfully");  
+  const handleAddProduct = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const product_name = form.product_name.value;
+    const brand_name = form.brand_name.value;
+    const product_type = form.product_type.value;
+    const product_price = form.product_price.value;
+    const rating = form.rating.value;
+    const product_image = form.product_image.value;
+    const description = form.description.value;
+
+    const newProduct = {
+      product_name,
+      brand_name,
+      product_type,
+      product_price,
+      rating,
+      product_image,
+      description
+    }
+
+    fetch('http://localhost:5000/product', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(newProduct)
+    })
+    .then(res => res.json())
+    .then(() => {
+      notify();
+
+    })
+    .catch(err => {
+      console.log(err.message);
+    })
+  }
   return (
     <>
       <div className="full_container addProduct_full">
         <div className="fix_container addProduct">
           <h2>Add New Product</h2>
-          <form>
+          <form onSubmit={handleAddProduct}>
             <div className="input_item">
               <label htmlFor="product_name">Product Name</label>
               <input placeholder="Product Name" type="text" name="product_name" />
@@ -39,6 +77,7 @@ const AddProduct = () => {
           </form>
         </div>
       </div>
+      <ToastContainer/>
     </>
   );
 };

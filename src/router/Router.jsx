@@ -7,6 +7,7 @@ import ProductDetails from "../pages/ProductDetails/ProductDetails";
 import SignUp from "../pages/SignUp/SignUp";
 import Login from "../pages/Login/Login";
 import NotFound from "../pages/NotFound/NotFound";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = () => {
   return (
@@ -15,8 +16,12 @@ const Router = () => {
         <Routes>
           <Route path="/" element={<Root />}>
             <Route path="/" element={<Home />} />
-            <Route path="/add-product" element={<AddProduct />} />
-            <Route path="/products" element={<Products />} />
+            <Route path="/add-product" element={
+              <PrivateRoute>
+                <AddProduct />
+              </PrivateRoute>
+            } />
+            <Route path="/products/:brand" element={<Products />} />
             <Route path="/product-details" element={<ProductDetails />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
